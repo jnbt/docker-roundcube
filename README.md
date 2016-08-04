@@ -1,7 +1,8 @@
 # Roundcube on php:5.6-apache
 
-[![docker hub](https://img.shields.io/badge/docker-image-blue.svg?style=flat-square)](https://registry.hub.docker.com/u/jnbt/roundcube/)
-[![imagelayers](https://badge.imagelayers.io/jnbt/roundcube:latest.svg)](https://imagelayers.io/?images=jnbt/roundcube:latest)
+[![docker hub](https://img.shields.io/badge/docker-image-blue.svg?style=flat)](https://registry.hub.docker.com/u/jnbt/roundcube/)
+[![](https://images.microbadger.com/badges/version/jnbt/roundcube.svg)](https://registry.hub.docker.com/u/jnbt/roundcube/)
+[![microbadger](https://images.microbadger.com/badges/image/jnbt/roundcube.svg)](https://microbadger.com/images/jnbt/roundcube)
 
 ## Docker run
 
