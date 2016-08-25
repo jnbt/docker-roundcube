@@ -41,7 +41,7 @@ init_config() {
   custom="$ROUNDCUBE_DIR/config/custom/*.php"
 
   echo "[INFO] Prepare basic configuration via $env_config"
-  echo "require_once '$env_config';" >> "$config"
+  echo "require '$env_config';" >> "$config"
   echo "<?php" > "$env_config"
 
   db="'mysql://' . getenv('MYSQL_USER') . ':' . getenv('MYSQL_PASSWORD') . '@' . getenv('MYSQL_HOST') . '/' . getenv('MYSQL_DATABASE')"
@@ -62,7 +62,7 @@ init_config() {
   echo "[INFO] Prepare extended configuration via $custom"
   cat >> $config <<EOF
 foreach (glob('$custom') as \$f) {
-  require_once \$f;
+  require \$f;
 }
 EOF
 }
