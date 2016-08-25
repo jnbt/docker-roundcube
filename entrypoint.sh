@@ -72,6 +72,11 @@ init_db() {
   bin/initdb.sh --dir "$ROUNDCUBE_DIR/SQL"
 }
 
+update() {
+  echo "[INFO] Updating Roundcube"
+  bin/update.sh
+}
+
 start_server() {
   exec apache2-foreground
 }
@@ -81,6 +86,7 @@ case ${1} in
     echo "Available options:"
     echo " app:start        - Starts the roundcube server (default)"
     echo " app:init         - Initializes the database"
+    echo " app:update       - Updates the config and database"
     echo " app:help         - Displays this help"
     echo " [command]        - Execute the specified command, eg. bash."
     ;;
@@ -93,6 +99,11 @@ case ${1} in
     wait_for_mysql
     init_config
     init_db
+    ;;
+  app:update)
+    wait_for_mysql
+    init_config
+    update
     ;;
   *)
     init_config
