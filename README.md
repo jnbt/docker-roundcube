@@ -6,7 +6,7 @@
 
 ## Docker run
 
-    docker run --rm -it \
+    docker run --rm \
       --network backend \
       --name roundcube \
       -P \
@@ -20,6 +20,8 @@ In case you want to automatically create the MySQL database layout run the conta
       --network backend \
       jnbt/roundcube \
       app:init
+      
+**NOTE:** This must be used in iteractive mode, as you may have to answer questions of the CLI.
 
 ## Configuration
 
@@ -64,6 +66,32 @@ Where a custom config file could be `/path/to/config/folder/user.inc.php`:
 // List of active plugins (in plugins/ directory)
 $config['plugins'] = array('managesieve', 'archive', 'show_additional_headers');
 ```
+
+## Updating
+
+You can update the Roundcube version by using the matching tag of this docker image:
+
+1. Shutdown the running instance:
+
+    	docker stop roundcube
+
+2. Use the new version to update the database.
+
+	    docker run --rm -it \
+	      --network backend \
+	      jnbt/roundcube:$VERSION \
+	      app:update
+
+    **NOTE:** This must be used in iteractive mode, as you may have to answer questions of the CLI.
+
+
+3. Start the new version:
+
+	    docker run --rm \
+	      --network backend \
+	      --name roundcube \
+	      -P \
+	      jnbt/roundcube
 
 
 ## Software
