@@ -97,7 +97,7 @@ You can update the Roundcube version by using the matching tag of this docker im
 ## Software
 
 * [php:5.6-apache](https://hub.docker.com/_/php/)
-* [Roundcube 1.2.0](https://roundcube.net)
+* [Roundcube 1.2.1](https://roundcube.net)
 
 ## Release
 

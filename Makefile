@@ -1,5 +1,5 @@
 NAME=roundcube
-VERSION=1.2.0
+VERSION=1.2.1
 
 build:
 	docker build -t ${NAME} .
