@@ -69,7 +69,7 @@ EOF
 
 init_db() {
   echo "[INFO] Importing MySQL tables"
-  cat $ROUNDCUBE_DIR/SQL/mysql.initial.sql | mysql --host=$MYSQL_HOST --user=$MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE
+  bin/initdb.sh --dir "$ROUNDCUBE_DIR/SQL"
 }
 
 start_server() {
@@ -91,9 +91,11 @@ case ${1} in
     ;;
   app:init)
     wait_for_mysql
+    init_config
     init_db
     ;;
   *)
+    init_config
     exec "$@"
     ;;
 esac
