@@ -20,7 +20,7 @@ In case you want to automatically create the MySQL database layout run the conta
       --network backend \
       jnbt/roundcube \
       app:init
-      
+
 **NOTE:** This must be used in iteractive mode, as you may have to answer questions of the CLI.
 
 ## Configuration
@@ -97,7 +97,7 @@ You can update the Roundcube version by using the matching tag of this docker im
 ## Software
 
 * [php:5.6-apache](https://hub.docker.com/_/php/)
-* [Roundcube 1.2.1](https://roundcube.net)
+* [Roundcube 1.2.2](https://roundcube.net)
 
 ## Release
 
