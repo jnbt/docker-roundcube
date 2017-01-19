@@ -28,7 +28,7 @@ RUN docker-php-ext-configure intl \
  && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
  && docker-php-ext-install pdo pdo_mysql intl exif ldap
 
-# Install pear extentions
+# Install pear extensions
 RUN pear install $REQUIRED_PEAR \
  && rm -rf /tmp/*
 
